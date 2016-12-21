@@ -1,0 +1,29 @@
+== application crashed
+app name: OTClient
+app version: 0.6.6
+build compiler: gcc 4.8.1
+build date: Sep  5 2016
+build type: Release
+build revision: 0 (devel)
+crash date: Oct 06 2016 21:33:14
+exception: Access violation (0xc0000005)
+exception address: 0x139ea9ba
+  backtrace:
+    0: C:\WINDOWS\SYSTEM32\nvoglv32.DLL(DrvPresentBuffers+0x861a) [0x00000000139EA9BA]
+    1: C:\WINDOWS\SYSTEM32\nvoglv32.DLL(DllMain+0x5b62) [0x00000000139C9572]
+    2: C:\WINDOWS\SYSTEM32\nvoglv32.DLL(DllMain+0x5cd9) [0x00000000139C96E9]
+    3: C:\WINDOWS\SYSTEM32\nvoglv32.DLL(DllMain+0x5b0c) [0x00000000139C951C]
+    4: C:\WINDOWS\SYSTEM32\nvoglv32.DLL(DllMain+0x568a) [0x00000000139C909A]
+    5: C:\WINDOWS\SYSTEM32\nvoglv32.DLL(DrvSwapLayerBuffers+0x292) [0x00000000139B6692]
+    6: C:\WINDOWS\SYSTEM32\nvoglv32.DLL(DrvSwapBuffers+0xd) [0x00000000139B63ED]
+    7: C:\WINDOWS\SYSTEM32\OPENGL32.DLL(wglCopyContext+0x8bb) [0x000000006E340EDB]
+    8: C:\WINDOWS\SYSTEM32\OPENGL32.DLL(wglSwapBuffers+0x77) [0x000000006E34DFE7]
+    9: C:\WINDOWS\System32\gdi32full.dll(SwapBuffers+0x36) [0x0000000075178BC6]
+    10: C:\Users\Jose\Desktop\Pokemon TES\dxpclient_ogl.exe [0x0000000000476B30]
+    11: C:\Users\Jose\Desktop\Pokemon TES\dxpclient_ogl.exe [0x00000000004794FA]
+    12: C:\Users\Jose\Desktop\Pokemon TES\dxpclient_ogl.exe(wglewIsSupported+0x123535) [0x000000000074B525]
+    13: C:\Users\Jose\Desktop\Pokemon TES\dxpclient_ogl.exe [0x0000000000401250]
+    14: C:\Users\Jose\Desktop\Pokemon TES\dxpclient_ogl.exe [0x00000000004012D5]
+    15: C:\WINDOWS\SYSTEM32\ntdll.dll(RtlSubscribeWnfStateChangeNotification+0x439) [0x0000000077570609]
+    16: C:\WINDOWS\SYSTEM32\ntdll.dll(RtlSubscribeWnfStateChangeNotification+0x404) [0x00000000775705D4]
+
