@@ -24,7 +24,10 @@ function terminate()
    disconnect(g_game, { onGameEnd = hide })
    disconnect(g_game, 'onTextMessage', getParams)
    disconnect(LocalPlayer, { onLevelChange = onLevelChange })
-   
+   disconnect(g_game, {
+    onGameStart = online,
+    onGameEnd = offline
+  })
    destroyIcons()
    cdBarWin:destroy()
 end

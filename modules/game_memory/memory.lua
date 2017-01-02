@@ -9,7 +9,10 @@ end
 
 function terminate()
   disconnect(g_game, { onGameEnd = onGameEnd })
-
+disconnect(g_game, {
+    onGameStart = online,
+    onGameEnd = offline
+  })
   deadWindow:destroy()
 end
 
