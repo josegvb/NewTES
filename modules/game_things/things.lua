@@ -1,8 +1,10 @@
 filename =  nil
 loaded = false
 
+
 function init()
   connect(g_game, { onProtocolVersionChange = load })
+	connect(g_game, {onProtocolVersionChange = onClientVersionChange})
 end
 
 function terminate()
@@ -17,17 +19,18 @@ function isLoaded()
   return loaded
 end
 
+function onClientVersionChange(version)
+g_things.loadOtml('/things/things.otml')
+end
+ 
 function load()
-	
   g_game.enableFeature(GameSpritesAlphaChannel)	
   local version = g_game.getClientVersion()
 
-  --g_game.enableFeature(GameSpritesAlphaChannel)
   g_game.enableFeature(GameDiagonalAnimatedText)
   g_game.enableFeature(GameMagicEffectU16)
   g_game.enableFeature(GameSpritesU32)
   setFileName('things')
-
   local datPath, sprPath
   if filename then
     datPath = resolvepath('/things/' .. filename)

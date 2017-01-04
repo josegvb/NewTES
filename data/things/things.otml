@@ -1,0 +1,30 @@
+items:
+  416:
+    opacity:0.5
+creatures:
+  1950:
+    opacity:0.5
+  1288:
+    opacity:0.9
+  595:
+    opacity:0.5	
+  1123:
+    opacity:0.5		
+  1288:
+    opacity:0.5		
+  1474:
+    opacity:0.7			
+effects:
+  3:
+    opacity:0.5
+  6:
+    opacity:0.9
+  380:
+    opacity:0.8	
+  381:
+    opacity:0.5		
+missiles:
+  3:
+    opacity:0.7
+  17:
+    opacity:0.7
