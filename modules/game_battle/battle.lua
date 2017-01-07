@@ -84,19 +84,24 @@ function terminate()
   ProtocolGame.unregisterExtendedOpcode(106)
 end
 
+
 function toggle()
   if battleButton:isOn() then
     battleWindow:close()
     battleButton:setOn(false)
+	
   else
+  
     battleWindow:open()
     battleButton:setOn(true)
   end
 end
 
+
 function onMiniWindowClose()
   battleButton:setOn(false)
 end
+
 
 function checkCreatures()
   removeAllCreatures()
@@ -106,17 +111,20 @@ function checkCreatures()
   if g_game.isOnline() then
     g_game.getProtocolGame():sendExtendedOpcode(106, 'refresh')
     creatures = g_map.getSpectators(player:getPosition(), false)
+	
     for i, creature in ipairs(creatures) do
       if creature ~= player and doCreatureFitFilters(creature) then
         table.insert(spectators, creature)
       end
     end
+	
   end
 
   for i, v in pairs(spectators) do
     addCreature(v)
   end
 end
+
 
 function isMyPokemon(protocol, opcode, buffer)
   local battleButton = battleButtonsByCreaturesList[tonumber(buffer)]
@@ -128,6 +136,7 @@ function isMyPokemon(protocol, opcode, buffer)
   pokemonId = tonumber(buffer)
   addCreature(creature)
 end
+
 
 function doCreatureFitFilters(creature)
   local localPlayer = g_game.getLocalPlayer()
@@ -165,6 +174,7 @@ function onCreatureHealthPercentChange(creature, health)
   end
 end
 
+
 function onCreaturePositionChange(creature, newPos, oldPos)
   if creature:isLocalPlayer() then
     if oldPos and newPos and newPos.z ~= oldPos.z then
@@ -174,7 +184,9 @@ function onCreaturePositionChange(creature, newPos, oldPos)
         addCreature(creatureButton.creature)
       end
     end
+	
   else
+  
     local has = hasCreature(creature)
     local fit = doCreatureFitFilters(creature)
     if has and not fit then
@@ -212,7 +224,6 @@ function addCreature(creature)
   local battleButton = battleButtonsByCreaturesList[creatureId]
   
 		if creature:getHealthPercent() <= 1 then
-		   battleButton:setVisible(false)
 		   return true
 		end
 
@@ -272,27 +283,36 @@ function onBattleButtonMouseRelease(self, mousePosition, mouseButton)
     mouseWidget.cancelNextRelease = false
     return false
   end
+  
   if ((g_mouse.isPressed(MouseLeftButton) and mouseButton == MouseRightButton) 
     or (g_mouse.isPressed(MouseRightButton) and mouseButton == MouseLeftButton)) then
     mouseWidget.cancelNextRelease = true
     g_game.look(self.creature)
     return true
+	
   elseif mouseButton == MouseLeftButton and g_keyboard.isShiftPressed() then
     g_game.look(self.creature)
     return true
+	
   elseif mouseButton == MouseRightButton and not g_mouse.isPressed(MouseLeftButton) then
     modules.game_interface.createThingMenu(mousePosition, nil, nil, self.creature)
     return true
+	
   elseif mouseButton == MouseLeftButton and not g_mouse.isPressed(MouseRightButton) then
     if self.isTarget then
       g_game.cancelAttack()
+	  
     else
       g_game.attack(self.creature)
     end
+	
     return true
   end
   return false
 end
+
+
+
 
 function onBattleButtonHoverChange(widget, hovered)
   if widget.isBattleButton then
@@ -300,6 +320,9 @@ function onBattleButtonHoverChange(widget, hovered)
     updateBattleButton(widget)
   end
 end
+
+
+
 
 function onAttack(creature)
   local battleButton = creature and battleButtonsByCreaturesList[creature:getId()] or lastBattleButtonSwitched
