@@ -1,9 +1,0 @@
-Module
-  name: game_held
-  description: ASASDAS
-  author: Ton
-  website: none
-  sandboxed: true
-  scripts: [ held ]
-  @onLoad: init()
-  @onUnload: terminate()

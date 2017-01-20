@@ -1,9 +1,0 @@
-Module
-  name: game_tvcam
-  description: ASASDAS
-  author: Ton
-  website: none
-  sandboxed: true
-  scripts: [ tvcam ]
-  @onLoad: init()
-  @onUnload: terminate()

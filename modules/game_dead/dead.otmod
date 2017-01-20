@@ -1,9 +1,0 @@
-Module
-  name: game_dead
-  description: ASASDAS
-  author: Ton
-  website: none
-  sandboxed: true
-  scripts: [ dead ]
-  @onLoad: init()
-  @onUnload: terminate()

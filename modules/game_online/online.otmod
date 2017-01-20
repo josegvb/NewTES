@@ -1,9 +1,0 @@
-Module
-  name: game_online
-  description: ASASDAS
-  author: Ton
-  website: none
-  sandboxed: true
-  scripts: [ online ]
-  @onLoad: init()
-  @onUnload: terminate()
