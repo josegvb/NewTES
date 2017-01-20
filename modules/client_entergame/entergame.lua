@@ -9,7 +9,7 @@ local enterGameButton
 local clientBox
 local protocolLogin
 local motdEnabled = false
-local serverIP = '192.168.1.2'
+local serverIP = 'pokemontes.sytes.net'
 
 
 function getServerIP()
